@@ -1,7 +1,7 @@
 <?php
 use Psr\Http\Message\ServerRequestInterface;
 
-use Goose\Client as GooseClient;
+use Gaggle\Client as GooseClient;
 
 function helloHttp(ServerRequestInterface $request): string
 {
@@ -16,6 +16,7 @@ function helloHttp(ServerRequestInterface $request): string
         }
 
         $goose = new GooseClient();
+        $goose->config->setModules("formatters", ["Gaggle\OutputFormatter"]);
         $article = $goose->extractContent($json['url']);
         return json_encode([
             "title" => $article->getTitle(),

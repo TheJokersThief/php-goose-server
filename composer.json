@@ -8,5 +8,10 @@
            "Composer\\Config::disableProcessTimeout",
            "FUNCTION_TARGET=helloHttp php -S localhost:${PORT:-8080} vendor/bin/router.php"
         ]
+    },
+    "autoload": {
+        "classmap": [
+            "app/"
+        ]
     }
 }

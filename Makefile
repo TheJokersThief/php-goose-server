@@ -13,7 +13,7 @@ install:  ## Install project without dev dependencies
 	composer install --no-dev
 
 run:  ## Start the local dev server
-	php -S localhost:8080 vendor/bin/router.php
+	FUNCTION_TARGET=helloHttp php -S localhost:8080 vendor/bin/router.php
 
 deploy_to_gfunctions:
 	gcloud functions deploy ${PROJECT_NAME} \
